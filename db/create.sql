@@ -2,20 +2,14 @@
 -- create tables
 --
 
--- feedback GEE 30 jan 2024
--- juloie hebben pas 1 tabel
--- kijk in de opdracht onder beoordeling, daar staat wat er allemaal in je DB moet zitten (onder anddre 5 tabellen)
--- de tabellen in de databse zijn aan elkaar gekoppeld
--- met een 1:n of n:m relatie
--- er is een video bij de opdracht waar de 1:n zo ongeveer voor gedaan wordt.
--- een voorbeeld van een 1:n relatie is een prodcut : catergorie, maar ook product: merkm (bij jullie gaat het over 1 merk, dus dan gebruikt je caterogei)
+
 
 CREATE TABLE products (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   code VARCHAR(15),
   name VARCHAR(255),
   description TEXT,
-  price NUMERIC(10, 2),
+  price NUMERIC(10, 2), 
   rating_id INTEGER,
   kwaliteit_id VARCHAR(20)
 );
@@ -25,14 +19,14 @@ CREATE TABLE category (
   Name VARCHAR(255)
 );
 
-CREATE TABLE ProductCategories(
-  id INTEGER PRIMARY KEY AUTOCREMENT,
+CREATE TABLE ProductCategories (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   products_id INTEGER,
   category_id INTEGER
 );
 
 CREATE TABLE rating (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  id INTEGER PRIMARY KEY,
   name VARCHAR(255)
 );
 
@@ -52,18 +46,18 @@ CREATE TABLE kwaliteit (
 -- want different data? check: https://www.mockaroo.com/910b6c20
 --
 
-insert into products (name, description, code, price, rating_id) values ('Oversized BMW Hoodie', 'Blaas nieuw leven in een klassiek kledingstuk met je eigen kunst. Deze hoodie heeft een uniseks ontwerp mmet zijnaden waadoor het kledingstuk op de lange termijn zijn vorm houdt. Met een ruime kangoeroezak voor meer dagelijkse bruikbaarheid, een comfortabele pasvorm op maat en meerdere kleuren om uit te kiezen - deze hoodies bieden een gezellige draagervaring boordevol stijl.', '816905633-0', 49.95, '3 sterren');
-insert into products (name, description, code, price, rating_id) values ('Duffel Bag BMW', 'Licht en sterk, onze custom gemaakte tas is een geweldige manier om jouw dag makkelijker te maken. Perfect voor de sportschool of een dagtripje. Deze tas is gemakkelijk te dragen en zijn klaar voor elk terrein.', '077030122-3', 69.95,'5 sterren');
-insert into products (name, description, code, price, rating_id) values ('BMW Puffer Jacket', 'De BMW Puffer Jacket is gemaakt van hoog kwaliteit katoen. Met deze jas steelt u de show en hij is ook niet bang om vies te worden.', '445924201-X', 69.95, '4 sterren');
-insert into products (name, description, code, price, rating_id) values ('Airpods Pro BMW Case Cover','Deze custom Airpods case beschermt uw oortjes tegen krassen en valschade. Met elk gepersonaliseerde airpods case krijg je een metalen karabijnhaak voor moeiteloze transportatie.','693155505-7', 39.95, '5 sterren');
-insert into products (name, description, code, price, rating_id) values ('Women Capri Legging', 'Creëer een unieke ervaringmet deze leggings. Met deze BMW Capri legging steel jij de show, want er zit een butt lift in.', '686928463-6', 14.99, '5 sterren');
-insert into products (name, description, code, price, rating_id) values ('BMW M8 Competition Watch', 'Deze BMW velg horloge laat het hart van elke motorsport-fan sneller kloppen. Deze horloge combineert technische perfectie met attentie tot detail naar het realistische design.', '492662523-7', 149.99,'2 sterren');
-insert into products (name, description, code, price, rating_id) values ('BMW Pet Bowl', 'Deze custom BMW dierenkom introduceert meer personaliteit in de voertijd. Deze speciale BMW voerbak is gemaakt van keramiek, dit is van hoge kwaliteit waardoor uw huisdier dit niet kapot maakt.', '987432654-9', 49.95,'3 sterren');
-insert into products (name, description, code, price, rating_id) values ('BMW Ice Bucket With Tongs', 'Breng een persoonlijke filter bij elke bijeenkomst die koude drankjes icet. Elke gepersonaliseerde BMW Ice Bucket komt met een eigen set tang vanm hoge kwaliteit.', '0873245123-1', 79.99,'3 sterren');
-insert into products (name, description, code, price, rating_id) values ('BMW Flip Flops', 'Laat uw voeten ademen! Met en hoog kwaliteit print, deze slippers zijn echt een must-have voor op het strand of tijdens de hete zomerdagen.', '985463211-D', 39.95,'4 sterren');
-insert into products (name, description, code, price, rating_id) values ('Twill BMW Hat', 'The Twill  pet is één van onze meest populaire producten en is perfect voor het actieve buitenleven en sportgelegenheden. De pet is gemaakt van katoen.', '231456781-B', 39.99,'2 sterren');
-insert into products (name, description, code, price, rating_id) values ('BMW Car mats (set of 4)', 'Geef een persoonlijke touch aan het interieur aan uw auto met deze custom gemaakte automatten. Ze komen in een set van 4, inclusief 2 front- en 2 achtermatten. De matten beschikken ook over een anti-slip laag, zodat ze altijd op de goede plek blijven zitten', '10987624-C', 124.99,'5 sterren');
-insert into products (name, description, code, price, rating_id) values ('BMW Flag', 'Als u wilt laten zien dat u een BMW fan bent met het hele hart is dit het perfecte product voor jou. Laat iedereen merken dat je de grootste BMW fan bent door middel van deze vlag','23998742-D', 34.99,'5 sterren');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('Oversized BMW Hoodie', 'Blaas nieuw leven in een klassiek kledingstuk met je eigen kunst. Deze hoodie heeft een uniseks ontwerp mmet zijnaden waadoor het kledingstuk op de lange termijn zijn vorm houdt. Met een ruime kangoeroezak voor meer dagelijkse bruikbaarheid, een comfortabele pasvorm op maat en meerdere kleuren om uit te kiezen - deze hoodies bieden een gezellige draagervaring boordevol stijl.', '816905633-0', 49.95, '3 sterren', '7/10');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('Duffel Bag BMW', 'Licht en sterk, onze custom gemaakte tas is een geweldige manier om jouw dag makkelijker te maken. Perfect voor de sportschool of een dagtripje. Deze tas is gemakkelijk te dragen en zijn klaar voor elk terrein.', '077030122-3', 69.95,'5 sterren', '9/10');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('BMW Puffer Jacket', 'De BMW Puffer Jacket is gemaakt van hoog kwaliteit katoen. Met deze jas steelt u de show en hij is ook niet bang om vies te worden.', '445924201-X', 69.95, '4 sterren', '5/10');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('Airpods Pro BMW Case Cover','Deze custom Airpods case beschermt uw oortjes tegen krassen en valschade. Met elk gepersonaliseerde airpods case krijg je een metalen karabijnhaak voor moeiteloze transportatie.','693155505-7', 39.95, '5 sterren', '6/10');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('Women Capri Legging', 'Creëer een unieke ervaring met deze leggings. Met deze BMW Capri legging steel jij de show, want er zit een butt lift in.', '686928463-6', 14.99, '5 sterren', '10/10');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('BMW M8 Competition Watch', 'Deze BMW velg horloge laat het hart van elke motorsport-fan sneller kloppen. Deze horloge combineert technische perfectie met attentie tot detail naar het realistische design.', '492662523-7', 149.99,'2 sterren', '9/10');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('BMW Pet Bowl', 'Deze custom BMW dierenkom introduceert meer personaliteit in de voertijd. Deze speciale BMW voerbak is gemaakt van keramiek, dit is van hoge kwaliteit waardoor uw huisdier dit niet kapot maakt.', '987432654-9', 49.95,'3 sterren', '7/10');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('BMW Ice Bucket With Tongs', 'Breng een persoonlijke filter bij elke bijeenkomst die koude drankjes icet. Elke gepersonaliseerde BMW Ice Bucket komt met een eigen set tang vanm hoge kwaliteit.', '0873245123-1', 79.99,'3 sterren', '4/10');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('BMW Flip Flops', 'Laat uw voeten ademen! Met en hoog kwaliteit print, deze slippers zijn echt een must-have voor op het strand of tijdens de hete zomerdagen.', '985463211-D', 39.95,'4 sterren', '6/10');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('Twill BMW Hat', 'The Twill  pet is één van onze meest populaire producten en is perfect voor het actieve buitenleven en sportgelegenheden. De pet is gemaakt van katoen.', '231456781-B', 39.99,'2 sterren', '8/10');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('BMW Car mats (set of 4)', 'Geef een persoonlijke touch aan het interieur aan uw auto met deze custom gemaakte automatten. Ze komen in een set van 4, inclusief 2 front- en 2 achtermatten. De matten beschikken ook over een anti-slip laag, zodat ze altijd op de goede plek blijven zitten', '10987624-C', 124.99,'5 sterren', '7/10');
+insert into products (name, description, code, price, rating_id, kwaliteit_id) values ('BMW Flag', 'Als u wilt laten zien dat u een BMW fan bent met het hele hart is dit het perfecte product voor jou. Laat iedereen merken dat je de grootste BMW fan bent door middel van deze vlag','23998742-D', 34.99,'5 sterren', '5/10');
 
 insert into rating (name) values ('5 sterren');
 insert into rating (name) values ('4 sterren');
@@ -81,3 +75,20 @@ insert into kwaliteit (cijfer_kwaliteit, waarom_cijfer) values ('7/10','Het prod
 insert into kwaliteit (cijfer_kwaliteit, waarom_cijfer) values ('8/10','Het product is gemaakt in een fabriek in de EU, heeft een uniek design, de details zijn met de hand afgewerkt en heeft een garantiegeldigheid.');
 insert into kwaliteit (cijfer_kwaliteit, waarom_cijfer) values ('9/10','Het product is volledig met de hand gemaakt in de EU, de details zien er perfect uit en je kunt zelfs met klarna betalen als je dit product besteld.');
 insert into kwaliteit (cijfer_kwaliteit, waarom_cijfer) values ('10/10','Helemaal niks te klagen, met de hand gemaakt, details zijn perfect verwerkt, super uniek design en een hele goede garantiegeldigheid en veel betalingsmogelijkheden.');
+
+insert into category (name) values ('Torso en sneakers');
+insert into category (name) values ('Broeken');
+insert into category (name) values ('Accessoires');
+
+insert into ProductCategories (products_id, category_id) values (1,1);
+insert into ProductCategories (products_id, category_id) values (2,3);
+insert into ProductCategories (products_id, category_id) values (3,1);
+insert into ProductCategories (products_id, category_id) values (4,3);
+insert into ProductCategories (products_id, category_id) values (5,2);
+insert into ProductCategories (products_id, category_id) values (6,3);
+insert into ProductCategories (products_id, category_id) values (7,3);
+insert into ProductCategories (products_id, category_id) values (8,3);
+insert into ProductCategories (products_id, category_id) values (9,3);
+insert into ProductCategories (products_id, category_id) values (10,1);
+insert into ProductCategories (products_id, category_id) values (12,3);
+insert into ProductCategories (products_id, category_id) values (12,3);

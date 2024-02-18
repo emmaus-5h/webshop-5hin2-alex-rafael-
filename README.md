@@ -200,6 +200,12 @@ for a "Simple inventory list example with crud using : NodeJS, express framework
 - Robert Bakker [Notalifeform](https://www.gihub.com/Notalifeform)<br>
 for help almost 24x7 with many questions and problems and providing basic shop called gitpodnode to be further developed by students on gitpod and deplyed freely on heroku. See https://gitpod.io/#https://github.com/Notalifeform/gitpodnode
 
-
+-- feedback GEE 30 jan 2024
+-- julie hebben pas 1 tabel
+-- kijk in de opdracht onder beoordeling, daar staat wat er allemaal in je DB moet zitten (onder anddre 5 tabellen)
+-- de tabellen in de database zijn aan elkaar gekoppeld
+-- met een 1:n of n:m relatie
+-- er is een video bij de opdracht waar de 1:n zo ongeveer voor gedaan wordt.
+-- een voorbeeld van een 1:n relatie is een prodcut : catergorie, maar ook product: merkm (bij jullie gaat het over 1 merk, dus dan gebruikt je caterogie)
 
 
